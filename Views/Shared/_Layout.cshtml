@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+
+    <!-- Bootstrap -->
+    <link href="@Url.Content("~/css/bootstrap.css")" rel="stylesheet">
+    <link href="@Url.Content("~/css/jumbotron-narrow.css")" rel="stylesheet">
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron">
+            <h1>Jumbotron heading</h1>
+            <p class="lead">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
+
+        </div>
+
+        <nav class="navbar inverse">
+            <div class=" container-narrow">
+               
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                           Samples                         
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a id="sales" href="#">Sales Copy</a></li>
+                            <li><a id="news" href="#">News Copy</a></li>
+                            @*<li><a href="#">Page 1-3</a></li>*@
+                        </ul>
+                 
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+
+                </ul>
+            </div>
+        </nav>
+       
+      
+        </div>
+
+        @RenderBody()
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+        <script src="@Url.Content("~/js/bootstrap.js")"></script>
+        <script type="text/javascript">
+            $('#news').click(function () {
+                $('#divNews').show();
+                $('#divSales').hide();
+            });
+
+            $('#sales').click(function () {
+                $('#divSales').show();
+                $('#divNews').hide();
+            });
+        </script>
+</body>
+</html>
